@@ -171,13 +171,30 @@ body {
     margin: auto;
 }
 
+/* === START: الكود المضاف والمعدل === */
 .logo {
-    font-size: 2.2rem;
-    font-weight: 900;
-    color: var(--text-primary);
-    text-decoration: none;
+    height: 60px; /* ارتفاع اللوجو */
+    width: 60px; /* عرض اللوجو لضمان دائرة متساوية */
+    border-radius: 50%; /* لجعل الصورة دائرية (كيرف) */
+    object-fit: cover; /* لضمان ملء الصورة للدائرة بشكل صحيح */
+    border: 2px solid var(--border-color); /* إطار بسيط يتناسق مع التصميم */
+    transition: all var(--transition-speed) ease; /* انتقال سلس لكل الخصائص */
     z-index: 1002;
 }
+
+.logo:hover {
+    transform: scale(1.05); /* تكبير بسيط عند التمرير */
+    border-color: var(--accent-color); /* تغيير لون الإطار */
+    box-shadow: 0 0 15px var(--glow-color); /* إضافة توهج */
+}
+
+/* تصغير اللوجو عند تمرير الصفحة لأسفل */
+.header.scrolled .logo {
+    height: 50px;
+    width: 50px;
+}
+/* === END: الكود المضاف والمعدل === */
+
 
 .desktop-nav {
     display: none;
