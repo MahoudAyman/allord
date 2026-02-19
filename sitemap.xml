@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- الصفحة الرئيسية - أعلى أولوية -->
+  <url>
+    <loc>https://www.allorde.kesug.com/</loc>
+    <lastmod>2025-02-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.allorde.kesug.com/logo.png</image:loc>
+      <image:title>شركة اللورد لنقل العفش والأثاث بالرياض</image:title>
+      <image:caption>الشعار الرسمي لشركة اللورد - أفضل شركة نقل عفش بالرياض</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.allorde.kesug.com/Img3.jpg</image:loc>
+      <image:title>فريق عمل شركة اللورد المحترف</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.allorde.kesug.com/Img4.png</image:loc>
+      <image:title>شاحنة دينا مغلقة لنقل العفش</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.allorde.kesug.com/Img5.jpg</image:loc>
+      <image:title>خدمات نقل العفش الاحترافية</image:title>
+    </image:image>
+  </url>
+
+  <!-- صفحة index.html (نفس المحتوى) -->
+  <url>
+    <loc>https://www.allorde.kesug.com/index.html</loc>
+    <lastmod>2025-02-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- صفحة معلومات عنا -->
+  <url>
+    <loc>https://www.allorde.kesug.com/about.html</loc>
+    <lastmod>2025-02-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.allorde.kesug.com/Img3.jpg</image:loc>
+      <image:title>فريق عمل شركة اللورد المحترف</image:title>
+    </image:image>
+  </url>
+
+  <!-- صفحة اتصل بنا -->
+  <url>
+    <loc>https://www.allorde.kesug.com/contact.html</loc>
+    <lastmod>2025-02-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- صفحة سياسة الخصوصية -->
+  <url>
+    <loc>https://www.allorde.kesug.com/privacy-policy.html</loc>
+    <lastmod>2025-02-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- صفحات المدونة -->
+  <url>
+    <loc>https://www.allorde.kesug.com/blog-post1.html</loc>
+    <lastmod>2025-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.allorde.kesug.com/blog-post2.html</loc>
+    <lastmod>2025-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.allorde.kesug.com/blog-post3.html</loc>
+    <lastmod>2025-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

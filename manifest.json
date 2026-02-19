@@ -1,0 +1,102 @@
+{
+  "name": "شركة اللورد لنقل العفش والأثاث - الرياض",
+  "short_name": "اللورد لنقل العفش",
+  "description": "الشركة الأولى لنقل العفش بالرياض - خدمة احترافية 24/7 مع ضمان شامل وأفضل الأسعار",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#00f5c3",
+  "background_color": "#ffffff",
+  "categories": [
+    "business",
+    "utilities",
+    "productivity",
+    "lifestyle"
+  ],
+  "icons": [
+    {
+      "src": "favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon-32x32.png", 
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180", 
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "Img3.jpg",
+      "sizes": "1200x800",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "خدمات نقل العفش الاحترافية"
+    },
+    {
+      "src": "Img4.png", 
+      "sizes": "800x1200",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "فريق العمل المتخصص"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "اتصل بنا الآن",
+      "short_name": "اتصل",
+      "description": "اتصل بشركة اللورد مباشرة",
+      "url": "tel:+966548300299",
+      "icons": [
+        {
+          "src": "favicon-32x32.png",
+          "sizes": "32x32",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "واتساب",
+      "short_name": "واتس",
+      "description": "تواصل معنا عبر الواتساب",
+      "url": "https://wa.me/966548300299?text=أريد%20الاستفسار%20عن%20خدمات%20نقل%20العفش",
+      "icons": [
+        {
+          "src": "favicon-32x32.png", 
+          "sizes": "32x32",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false,
+  "display_override": [
+    "window-controls-overlay",
+    "minimal-ui",
+    "standalone",
+    "browser"
+  ]
+}

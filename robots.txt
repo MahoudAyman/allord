@@ -1,0 +1,71 @@
+# Robots.txt لشركة اللورد لنقل العفش والأثاث بالرياض
+# تحديث: 2025
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /about.html
+Allow: /contact.html
+Allow: /privacy-policy.html
+Allow: /blog-post1.html
+Allow: /blog-post2.html
+Allow: /blog-post3.html
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.webp
+Allow: /*.svg
+Allow: /*.ico
+
+# منع الزحف للمجلدات الإدارية والتطويرية
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /.zencoder/
+Disallow: /.zenflow/
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /sw.js
+
+# السماح لمحركات البحث الرئيسية
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# حظر محركات البحث السيئة
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# خريطة الموقع
+Sitemap: https://www.allorde.kesug.com/sitemap.xml
+Sitemap: https://allorde.kesug.com/sitemap.xml
+
+# معلومات إضافية
+# Host: https://www.allorde.kesug.com

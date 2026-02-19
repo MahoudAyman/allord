@@ -1,0 +1,1038 @@
+/*
+  ================================================================================
+  Table of Contents
+  ================================================================================
+  1.  :root Variables - المتغيرات الأساسية
+  2.  Global Styles - التنسيقات العامة
+  3.  Components - مكونات الموقع (أزرار، بطاقات زجاجية)
+  4.  Header and Navigation - رأس الصفحة والتنقل
+  5.  Hero Section - القسم الرئيسي (Hero)
+  6.  Services Section - قسم الخدمات
+  7.  Fleet & Why Us Sections - أقسام الأسطول ولماذا نحن
+  8.  Stats Section - قسم الإحصائيات
+  9.  Process Timeline - قسم خطوات العمل
+  10. Coverage Section - قسم التغطية
+  11. Testimonials Section - قسم آراء العملاء
+  12. FAQ Section - قسم الأسئلة الشائعة
+  13. Blog Section - قسم المدونة
+  14. Packing Guide - قسم دليل التغليف
+  15. Footer - ذيل الصفحة
+  16. Floating Buttons - الأزرار العائمة
+  17. Responsive Design - التصميم المتجاوب
+  ================================================================================
+*/
+
+/* 1. :root Variables - المتغيرات الأساسية */
+:root {
+    --accent-color: #00f5c3;
+    --glow-color: rgba(0, 245, 195, 0.5);
+    --font-family: 'Cairo', sans-serif;
+    --transition-speed: 0.4s;
+}
+
+body[data-theme="light"] {
+    --bg-primary: #f0f2f5;
+    --bg-secondary: #ffffff;
+    --text-primary: #1c1c1e;
+    --text-secondary: #5a5a5f;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.6);
+    --header-bg: rgba(255, 255, 255, 0.7);
+}
+
+body[data-theme="dark"] {
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --header-bg: rgba(30, 30, 30, 0.7);
+}
+
+/* 2. Global Styles - التنسيقات العامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    overflow-x: hidden;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.hero-headline,
+.hero-subheadline,
+.hero-cta {
+    visibility: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.section-title .highlight {
+    color: var(--accent-color);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    max-width: 650px;
+    margin: 0 auto 5rem;
+    color: var(--text-secondary);
+}
+
+/* 3. Components - مكونات الموقع */
+.cta-button {
+    background-color: var(--accent-color);
+    color: #000;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    border: 2px solid var(--accent-color);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px var(--glow-color);
+    margin: 5px;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(5px);
+    transition: all 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 25px var(--glow-color);
+}
+
+/* 4. Header and Navigation - رأس الصفحة والتنقل */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 5%;
+    transition: all 0.4s ease;
+}
+
+.header.scrolled {
+    background: var(--header-bg);
+    backdrop-filter: blur(10px);
+    padding: 15px 5%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: auto;
+}
+
+/* === START: الكود المضاف والمعدل === */
+.logo {
+    height: 60px; /* ارتفاع اللوجو */
+    width: 60px; /* عرض اللوجو لضمان دائرة متساوية */
+    border-radius: 50%; /* لجعل الصورة دائرية (كيرف) */
+    object-fit: cover; /* لضمان ملء الصورة للدائرة بشكل صحيح */
+    border: 2px solid var(--border-color); /* إطار بسيط يتناسق مع التصميم */
+    transition: all var(--transition-speed) ease; /* انتقال سلس لكل الخصائص */
+    z-index: 1002;
+}
+
+.logo:hover {
+    transform: scale(1.05); /* تكبير بسيط عند التمرير */
+    border-color: var(--accent-color); /* تغيير لون الإطار */
+    box-shadow: 0 0 15px var(--glow-color); /* إضافة توهج */
+}
+
+/* تصغير اللوجو عند تمرير الصفحة لأسفل */
+.header.scrolled .logo {
+    height: 50px;
+    width: 50px;
+}
+/* === END: الكود المضاف والمعدل === */
+
+
+.desktop-nav {
+    display: none;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.desktop-nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.desktop-nav a:hover {
+    color: var(--accent-color);
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-btn {
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1002;
+    background: transparent;
+    border: none;
+}
+
+.menu-btn .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-primary);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-btn.is-active .bar:nth-child(1) {
+    transform: translateY(9.5px) rotate(45deg);
+}
+
+.menu-btn.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.is-active .bar:nth-child(3) {
+    transform: translateY(-9.5px) rotate(-45deg);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    max-width: 80%;
+    height: 100vh;
+    background: var(--header-bg);
+    backdrop-filter: blur(15px);
+    z-index: 1001;
+    transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--border-color);
+}
+
+.sidebar.is-active {
+    right: 0;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.sidebar-nav li {
+    margin: 2rem 0;
+}
+
+.sidebar-nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+    position: relative;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+    color: var(--accent-color);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent-color);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.4s ease;
+}
+
+.theme-toggle .icon-sun {
+    fill: var(--text-primary);
+}
+
+.theme-toggle .icon-moon {
+    stroke: var(--text-primary);
+}
+
+body[data-theme="dark"] .icon-sun {
+    display: none;
+}
+
+body[data-theme="light"] .icon-moon {
+    display: none;
+}
+
+/* 5. Hero Section - القسم الرئيسي */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5%;
+    position: relative;
+}
+
+body[data-theme="dark"] .hero-section {
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+
+.hero-content {
+    max-width: 850px;
+    z-index: 1;
+}
+
+.hero-headline {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.hero-subheadline {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-secondary);
+}
+
+.hero-cta {
+    font-size: 1.2rem;
+    padding: 18px 40px;
+}
+
+/* 6. Services Section - قسم الخدمات */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    text-align: center;
+}
+
+.service-card .icon {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+/* 7. Fleet & Why Us Sections - أقسام الأسطول ولماذا نحن */
+#fleet,
+#stats,
+#testimonials,
+#blog,
+#packing-guide {
+    background-color: var(--bg-secondary);
+}
+
+.fleet-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.fleet-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: right;
+}
+
+.fleet-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.fleet-image img {
+    max-width: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.fleet-image:hover img {
+    transform: scale(1.05) translateX(-10px);
+}
+
+.why-us-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.why-us-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.why-us-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.why-us-image img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    height: 450px;
+}
+
+.features-list {
+    list-style: none;
+    margin-top: 2rem;
+    padding-right: 0;
+}
+
+.features-list li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.features-list .check-icon {
+    color: var(--accent-color);
+    background-color: rgba(0, 245, 195, 0.1);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+/* 8. Stats Section - قسم الإحصائيات */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.stat-card {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.stat-title {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+/* 9. Process Timeline - قسم خطوات العمل */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--accent-color), transparent);
+    top: 0;
+    bottom: 0;
+    right: 23px;
+    z-index: -1;
+}
+
+.timeline-item {
+    padding: 10px 60px;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.timeline-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 0 20px var(--glow-color);
+}
+
+/* 10. Coverage Section - قسم التغطية */
+.coverage-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.coverage-item {
+    background: var(--glass-bg);
+    color: var(--text-secondary);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.coverage-item:hover {
+    background: var(--accent-color);
+    color: #000;
+    transform: translateY(-3px);
+    border-color: var(--accent-color);
+}
+
+/* 11. Testimonials Section - قسم آراء العملاء */
+.testimonials-slider-container {
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    height: 350px; /* Adjust height as needed */
+}
+
+.testimonials-slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.testimonial-card {
+    width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.testimonial-card p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    font-style: italic;
+    max-width: 90%;
+}
+
+.testimonial-card h4 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+.testimonial-card .customer-title {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.stars-rating {
+    color: #fdd835;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* 12. FAQ Section - قسم الأسئلة الشائعة */
+.faq-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.faq-item {
+    background: var(--bg-secondary);
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item.active {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px var(--glow-color);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: right;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-family);
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.faq-answer p {
+    padding: 0 20px 20px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+/* 13. Blog Section - قسم المدونة */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.blog-card {
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-color);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-card-content {
+    padding: 20px;
+}
+
+.blog-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.blog-card p {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.blog-card .read-more {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+/* 14. Packing Guide - قسم دليل التغليف */
+.packing-steps {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.packing-step {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-color);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h3 {
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+
+/* 15. Footer - ذيل الصفحة */
+.footer {
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    padding: 60px 5% 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding-bottom: 40px;
+}
+
+.footer-col h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.footer-col p,
+.footer-col ul li {
+    font-size: 0.95rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.7rem;
+}
+
+.footer-col ul a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+.footer-col ul a:hover {
+    color: var(--accent-color);
+}
+
+.footer-about h3 .highlight {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* 16. Floating Buttons - الأزرار العائمة */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* 17. Responsive Design - التصميم المتجاوب */
+@media (max-width: 992px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
+}
+
+@media (min-width: 993px) {
+    .desktop-nav {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    .sidebar,
+    .overlay {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-headline {
+        font-size: 3rem;
+    }
+
+    .fleet-container,
+    .why-us-container {
+        flex-direction: column-reverse;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .packing-step {
+        flex-direction: column;
+    }
+
+    .step-number {
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+}
+
+
+/*
+================================================================================
+  Blog Post Styles - تنسيقات صفحات المدونة
+================================================================================
+*/
+
+/* 1. Main Blog Post Layout - تنسيق صفحة المقال الرئيسية */
+.blog-post .container {
+    max-width: 800px; /* عرض مناسب للمحتوى المقروء */
+    margin: 0 auto;
+}
+
+.blog-post .section-title {
+    font-size: 2.8rem; /* حجم خط أصغر قليلاً من عناوين الأقسام الرئيسية */
+    text-align: right;
+    margin-bottom: 2rem;
+}
+
+/* 2. Blog Post Image - صورة المقال */
+.blog-post-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover; /* لضمان ملء الصورة للمساحة بشكل جميل */
+    border-radius: 15px; /* حواف دائرية تتناسق مع البطاقات */
+    margin-bottom: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+/* 3. Article Content Typography - تنسيق محتوى المقال */
+.blog-content {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+.blog-content p {
+    margin-bottom: 1.5rem;
+}
+
+.blog-content h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-right: 15px;
+    border-right: 4px solid var(--accent-color); /* شريط جانبي للتمييز */
+}
+
+.blog-content ul,
+.blog-content ol {
+    margin-bottom: 1.5rem;
+    padding-right: 25px; /* مسافة بادئة للقوائم */
+}
+
+.blog-content li {
+    margin-bottom: 0.8rem;
+}
+
+.blog-content strong {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+/* 4. Call to Action (CTA) Container - حاوية الدعوة لاتخاذ إجراء */
+.cta-container {
+    margin-top: 3rem;
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--glass-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.cta-container p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+/* 5. Responsive Design for Blog - تصميم متجاوب للمدونة */
+@media (max-width: 768px) {
+    .blog-post .section-title {
+        font-size: 2.2rem; /* تصغير حجم العنوان للشاشات الصغيرة */
+        text-align: center;
+    }
+
+    .blog-content {
+        font-size: 1rem; /* تصغير حجم الخط لتحسين القراءة على الموبايل */
+        line-height: 1.8;
+    }
+
+    .blog-content h2 {
+        font-size: 1.5rem;
+    }
+}
